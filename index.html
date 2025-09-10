@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zash VIP — Join ₹150</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="logo">Zash <span>Premium</span></h1>
+      <nav class="nav">
+        <a href="#join">Join</a>
+        <a href="#payment">Payment</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="join">
+      <div class="hero-left">
+        <h2>Join <span>Zash VIP Group</span></h2>
+        <p class="lead">Access our <strong>Data Selling App</strong>, scanner & VIP-only resources.</p>
+        <div class="price">Only <strong>₹150</strong> one-time</div>
+        <div class="cta-row">
+          <button id="startJoin" class="btn primary">Join Zash VIP — ₹150</button>
+          <a id="upiAppBtn" class="btn ghost" href="upi://pay?pa=6005099281@mbk&pn=ZashVIP&am=150">Pay via UPI App</a>
+        </div>
+        <p class="note">Prefer direct UPI? Use the QR or copy the UPI ID below.</p>
+      </div>
+
+      <aside class="hero-right card" id="payment">
+        <div class="card-header">🔐 Zash VIP Access</div>
+        <div class="card-body">
+          <h3>Pay ₹150 to Join</h3>
+          <p>Send directly to UPI ID:</p>
+          <div class="upi-row">
+            <code id="upiId">6005099281@mbk</code>
+            <button id="copyUpi" class="btn small">Copy</button>
+          </div>
+          <img src="qr.png" alt="UPI QR Code" class="qr">
+          <div class="pay-actions">
+            <a class="btn" href="upi://pay?pa=6005099281@mbk&pn=ZashVIP&am=150">Open UPI App</a>
+            <button id="paidBtn" class="btn primary">I've Paid — Submit UTR</button>
+          </div>
+          <p class="hint">After verification you'll be able to join the Telegram VIP group.</p>
+
+          <form id="utrForm" class="utr-form" aria-label="UTR form">
+            <label for="utr">Enter UTR / Transaction ID:</label><br>
+            <input type="text" id="utr" name="utr" placeholder="e.g. 234567891234" required>
+            <div class="utr-actions">
+              <button type="submit" class="btn primary">Submit UTR</button>
+              <button type="button" id="clearUtr" class="btn">Clear</button>
+            </div>
+            <p id="utrMsg" class="utr-msg" aria-live="polite"></p>
+          </form>
+
+          <div style="margin-top:10px; text-align:center;">
+            <button id="joinChannel" class="btn ghost">Join Telegram VIP Channel</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="info-cards">
+      <div class="card info">
+        <h4>What you get</h4>
+        <ul>
+          <li>Data Selling App access</li>
+          <li>Scanner & Templates</li>
+          <li>VIP Support</li>
+        </ul>
+      </div>
+      <div class="card info">
+        <h4>Security</h4>
+        <p>Payments go only to the given UPI ID.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating notification popup (auto fake joins) -->
+  <div id="liveNotify" class="live-notify" aria-live="polite"></div>
+
+  <!-- Modal: Payment required / Join flow -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button id="modalPay" class="btn">View Payment</button>
+        <button id="modalOk" class="btn primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Zash VIP Group | All Rights Reserved
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
